@@ -1,0 +1,1083 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+/*Le doy a toda la pagina un margin y un padding 0, aparte
+de darle una tipografia en general*/
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+}
+:root {
+    --ColorFondoPrincipal: #bebebb;
+    --ColorFondoSecundario: #fefeff;
+    --ColorLetrasPrincipal: #030303;
+    --ColorLetrasSecundaria: #804775;
+    --ColorLetraTransición: #eabe0e;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.scroll{
+    scroll-margin-top:12.3ex;
+}
+/*a todos los links les saco la decoracion*/
+a{
+    text-decoration: none;
+}
+@media(max-width:7000px ){
+    /*le movemos la cabecera para que el logo y los links queden
+    con un espaciado adecuado*/
+    header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--ColorFondoPrincipal);
+        height: 15vh;
+        padding: 5px 0px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1; 
+    }
+    /*acomodo la imagen del Logo*/
+    header img{
+        width: 100%;
+    }
+    .linkLogo{
+        width: 8.1%;
+    }
+    .links .link{
+        display: inline-block;
+    }
+    /*cambio el color y el tamaño de la letra de los links
+    de la cabecera*/
+    .links .link a{
+        display: block;
+        padding-left: 40px;
+        color: #000000;
+        transition: color 0.6s;
+        font-size: 1.5rem;
+    }
+    /*le doy pequeña transicion cuando pasan
+    el mouse por arriba*/
+    .links .link a:hover{
+        color: var(--ColorFondoSecundario);
+    }
+    .listaResponsive{
+        display: none;
+    }
+    /*Le doy propiedades al hero para que se separe en dos*/
+    .hero{
+        height: 100vh;
+        background-image: url(img/portada.png);
+        display: flex;
+        
+    }
+    /*le doy propiedades al apartado del hero
+    con mi nombre y informacion*/
+    .hero .informacion{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        margin-left: 4rem;
+        flex-basis: 80%;
+        margin-bottom: 11rem;
+    }
+    /*Modificamos tamaño y color del H1*/
+    .hero .informacion h1{
+        font-size:3rem;
+        color: var(--ColorLetrasPrincipal);
+        position: relative;
+        animation-name: muestraNombre;
+        animation-duration: 1.1s;
+        animation-timing-function: ease-in-out;
+    }
+    /*Ponemos otro color para mi nombre*/
+    .hero .informacion span{
+        font-size: 5rem;
+        color: var(--ColorLetrasSecundaria);
+    }
+    /*la descripcion la le pongo color y tamaño*/
+    .hero .informacion p{
+        color: var(--ColorLetrasPrincipal);
+        font-size: 1.8rem;
+        position: relative;
+        animation-name: muestraNombre;
+        animation-duration: 2.5s;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes muestraNombre{
+        0% {
+            bottom: 100%;
+        }
+        100%{
+            bottom: 0%;
+        }
+    }
+    /*Le doy estilo y dimension al boton que nos puede contactar*/
+    .hero .informacion a{
+        color: var(--ColorLetrasSecundaria);
+        border: 4px solid var(--ColorLetraTransición);
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-left: 14rem;
+        position: relative;
+        transition: all 0.5s ease;
+        animation: botonDeLado 3.5s ease;
+    }
+    /*Transicion del boton para darle mas detalle*/
+    .hero .informacion a:hover{
+        background-color: var(--ColorLetrasSecundaria);
+        color: var(--ColorFondoPrincipal);
+    }
+    @keyframes botonDeLado {
+        0%{
+            left: -50%;
+        }
+        70%{
+            left: -50%;
+        }
+        100%{
+            left: 0;
+        }
+    }
+
+    /*la parte derecha del hero le doy tamaño y posicion*/
+    .hero .iconos{
+        display: flex;
+        justify-content: end;
+        align-items:center;
+        flex-basis: 15%;
+        position: relative;
+        animation-name: muestraNombre;
+        animation-duration: 4.2s;
+        animation-timing-function: ease-in-out;
+    }
+    /*cambio le doy lugar y espaciado a los iconos*/
+    .hero .contenedor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+        margin-right: 25%;
+    }
+    /*tamaño a la linea que esta arriba de los iconos*/
+    .hero .contenedor img{
+        border-radius: 20px;
+        width: 16px;
+    }
+    /*cambio el tamaño y el color de los iconos*/
+    .hero .iconos i{
+        font-size: 2rem;
+        color: white;
+        transition: color 0.6s;
+    }
+    /*pequeña transicion a otro color cuando paso
+    el mouse por arriba*/
+    .hero .iconos i:hover{
+        color: var(--ColorLetrasSecundaria);
+    }
+    
+    .sobreMi{
+        background-color: var(--ColorFondoSecundario);
+        /* height: 168vh; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .infoMia{
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding-top: 0.6rem;
+    }
+    .infoMia h1{
+        
+        color: var(--ColorLetraTransición);
+        font-size: 3.3rem;
+        padding-top: 50px;
+    }
+    .infoMia .texto{
+        display: flex;
+        margin-top: 30px;
+    }
+    .infoMia .texto i{
+        font-size: 2.5rem;
+        color: var(--ColorLetrasSecundaria);
+    }
+    .infoMia .texto p{
+        font-size: 1.3rem;
+        color: var(--ColorLetrasPrincipal);
+        padding-top: 10px;
+    }
+    .infoMia .texto span{
+        color: var(--ColorLetrasSecundaria);
+    }
+    .infoMia .cv{
+        margin: 0 auto;
+        color: var(--ColorLetrasSecundaria);
+        border: 4px solid var(--ColorLetrasSecundaria);
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        margin-top: 2rem;
+        position: relative;
+        transition: all 0.5s ease;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    .infoMia .cv:hover{
+        background-color: var(--ColorLetrasSecundaria);
+        color: var(--ColorFondoPrincipal);
+    }
+    .infoMia .cv i{
+        font-size: 1.3rem;
+    }
+    .habilidades{
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: 0 auto;
+        margin-top: 50px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+    .habilidades h1{
+        color: var(--ColorLetraTransición);
+        font-size: 3.3rem;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .habilidades h2{
+        color: var(--ColorLetrasPrincipal);
+        padding-top: 20px;
+        transition: all 0.4s ease;
+    }
+    .contHabilidades{
+        display: flex;
+        flex-direction: column;
+    }
+    .grupoHabilidades{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 2.5rem;
+    }
+    .caja{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--ColorFondoPrincipal);
+        color: var(--ColorLetrasPrincipal);
+        border-radius: 15px;
+        width: 23%;
+        padding: 3rem 0rem;
+        transition: all 0.7s ease;
+    }
+    .caja:hover{
+        background-color: var(--ColorLetrasSecundaria);
+    }
+    .caja:hover h2 {
+        color: var(--ColorFondoPrincipal);
+    }
+    .caja img{
+        width: 25%;
+    }
+    .Experiencia{
+        background-color: var(--ColorFondoSecundario);
+        width: 100%;
+    }
+    .contExp{
+        width: 100%;
+        background-color: rgb(255, 200, 107,0.1);
+        padding-bottom: 2rem;
+    }
+    .contExp h1{
+        font-size: 3.3rem;
+        text-align: center;
+        color: var(--ColorLetraTransición);
+        padding-top: 2.5rem;
+        padding-bottom: 1.8rem;
+    }
+   
+    .cajaExperiencia{
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+        align-items: start;
+    }
+    .iconoExp{
+        width: 18%;
+        padding-top: 0.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .iconoExp i{
+        font-size: 2rem;
+        color: var(--ColorLetrasSecundaria);
+        padding-top: 0.3rem;
+    }
+    .iconoExp img{
+        border-radius:  5px;
+        padding-top: 1rem;
+        width: 7%;
+    }
+    .textoExp{
+        display: flex;
+        flex-direction: column;
+    }
+    .textoExp h2{
+        color: var(--ColorLetrasSecundaria);
+        font-size: 2.8rem;
+    }
+    .textoExp h3{
+        color: var(--ColorLetrasSecundaria);
+        font-size: 2rem;
+    }
+    .textoExp p{
+        color: var(--ColorLetrasPrincipal);
+        font-size: 1.3rem;
+        line-height: 2.5rem;
+    }
+    .linksExp{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin: 0 auto;
+        gap: 1rem;
+    }
+    .linksExp a{
+        padding: 5px 40px;
+        border-radius: 5px;
+        background-color: var(--ColorFondoPrincipal);
+        color: var(--ColorLetrasSecundaria);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.7s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .linksExp a:hover{
+        background-color: var(--ColorLetrasSecundaria);
+        color: var(--ColorFondoSecundario);
+    }
+    .proyectos{
+        background-color:var(--ColorFondoSecundario);
+        padding-top: 2.7rem;
+        padding-bottom: 2.6rem;
+    }
+    .contProyecto{
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .contProyecto h1{
+        color: var(--ColorLetraTransición);
+        font-size: 3.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1.5rem;
+    }
+    .grupoProyecto{
+        display: flex;
+        justify-content: space-between;
+    }
+    .cajaProyecto{
+        width: 31%;
+        margin-top: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 11px;
+    }
+    .contInfo{
+        background-color: rgb(52, 53, 58,0.8);
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 11px;
+    }
+    .contInfo h2{
+        color: var(--ColorLetrasSecundaria);
+        font-size: 2rem;
+    }
+    .contInfo p{
+        color: var(--ColorLetrasPrincipal);
+        font-size: 1.1rem;
+        padding-bottom: 15px;
+    }
+    .contInfo button{
+        padding: 5px 17px;
+        border-radius: 5px;
+        background-color: var(--ColorLetrasSecundaria);
+        color: var(--ColorFondoPrincipal);
+        border: none;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contInfo button:hover{
+        background-color: var(--ColorFondoPrincipal);
+        color: var(--ColorLetrasSecundaria);
+    }
+    .contInfo i{
+        font-size: 1.2rem;
+        padding-left: 10px;
+    }
+    .proyectos .mas{
+        color: var(--ColorLetrasPrincipal);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--ColorLetrasSecundaria);
+        color: var(--ColorFondoPrincipal);
+        font-size: 1.05rem;
+        width: 10%;
+        margin: 0 auto;
+        margin-top: 1.9rem;
+        padding: 10px 10px;
+        border-radius: 5px;
+        transition: all 0.6s ease;
+    }
+    .proyectos .mas:hover{
+        background-color: var(--ColorFondoPrincipal);
+        color: var(--ColorLetrasSecundaria);
+    }
+    .mas i{
+        padding-left: 10px;
+        font-size: 1.1rem;
+    }
+    .proy {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .modal{
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.6s ease;
+    }
+    .contModal{
+        background-color: var(--ColorFondoSecundario);
+        width: 45%;
+        margin: auto;
+        padding: 25px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        pointer-events: unset;
+        opacity: 1;
+        transition: all 0.6s ease;
+        position: relative;
+    }
+    .contModal h1{
+        color: var(--ColorLetrasSecundaria);
+        font-size: 2.7rem;
+        padding-bottom: 15px;
+    }
+    .contModal p{
+        color: var(--ColorLetrasPrincipal);
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    .contModal a{
+        color: var(--ColorLetrasPrincipal);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--ColorFondoPrincipal);
+        color: var(--ColorLetrasSecundaria);
+        font-size: 1rem;
+        margin: 0 auto;
+        padding: 7px 30px;
+        border-radius: 5px;
+        transition: all 0.6s ease;
+        width: 35%;
+    }
+    .contModal a:hover{
+        background-color: var(--ColorLetrasSecundaria);
+        color: var(--ColorFondoPrincipal);
+    }
+    .contModal button{
+        padding: 5px 40px;
+        border-radius: 5px;
+        background-color: var(--ColorFondoSecundario);
+        color: var(--ColorLetrasSecundaria);
+        border: 3px solid var(--ColorLetrasSecundaria);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+    .contModal button:hover{
+        background-color: var(--ColorLetrasSecundaria);
+        color: var(--ColorFondoPrincipal);
+        border: 3px solid var(--ColorFondoSecundario);
+    }
+    .show{
+        opacity: 1;
+        pointer-events: unset;
+        z-index: 1;
+    }
+    .animacion{
+        animation: ModalArriba 1s ease;
+    }
+    
+    @keyframes ModalArriba {
+        0%{
+            bottom: 200%;
+        }
+        100%{
+            bottom: 0%;
+        }
+    }
+    .costado{
+        display: flex;
+        gap: 1.2rem;
+        padding-top: 2rem;
+        width: 70%;
+    }
+    .contacto{
+        background-color: var(--ColorFondoSecundario);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2.7rem ;
+    }
+    .contacto h1{
+        color: var(--ColorLetraTransición);
+        font-size: 3.3rem;
+        padding-bottom: 3rem;
+    }
+    .contContacto{
+        background: url(img/lineaAcostada.png),url(img/lineaAcostada.png),url(img/lineaAcostada.png),url(img/lineaAcostada.png);
+        background-repeat: no-repeat;
+        background-position: top left,top right,bottom left,bottom right;
+        background-size: 40%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 200, 107,0.2);
+        position: relative;
+        padding:4.5rem 0rem;
+    }
+    .deLado{
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 20px;
+    }
+    .cajaContacto{
+        display: flex;
+        background-color: var(--ColorFondoPrincipal);
+        padding: 20px 20px;
+        border-radius: 7px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+    }
+    .copiar{
+        cursor:copy;
+    }
+    .cajaContacto i{
+        color: white;
+        font-size: 1.4rem;
+        padding-right: 15px;
+        transition: all 0.5s ease;
+    }
+    .cajaContacto p{
+        color: var(--ColorLetrasSecundaria);
+        font-size: 1.1rem;
+        transition: all 0.5s ease;
+    }
+    .cajaContacto:hover{
+        background-color: var(--ColorLetrasSecundaria);
+    }
+    .cajaContacto:hover p{
+        color: var(--ColorFondoPrincipal);
+    }
+    .cajaContacto:hover i{
+        color: black;
+    }
+    .linkContacto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 2.5rem;
+        padding-top: 1.7rem;
+    }
+    .linkContacto a{
+        color: var(--ColorLetrasPrincipal);
+        font-size: 1.6rem;
+        transition: all 0.5s ease;
+    }
+    .linkContacto a:hover{
+        color: var(--ColorLetrasSecundaria);
+    }
+
+    @keyframes mensaje {
+        0%{
+            top: 100%;
+            opacity: 1;
+            pointer-events: unset;
+        }
+        100%{
+            top: 80%;;
+            opacity: 1;
+            pointer-events: unset;
+        }
+    }
+    footer{
+    background-color: var(--ColorFondoSecundario);
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0rem;
+    }
+    footer h2{
+        color: var(--ColorLetrasSecundaria);
+        font-size: 2.5rem;
+    }
+}
+
+
+@media (max-width:1024px){
+    /*acomodo la imagen del Logo*/
+    
+    .linkLogo{
+        width: 6.9%;
+    }
+    .links{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(0, 0, 0,0.9);
+        height: 100vh;
+        width: 60%;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        z-index: -1;
+        opacity: 0;
+        gap: 2.8rem;
+        pointer-events: none;
+        transition: all 0.5 ease;
+    }
+    .links .link a{
+        padding-left: 0px;
+        color: var(--ColorLetrasPrincipal);
+        transition: color 0.6s;
+        font-size: 1.9rem;
+    }
+    .listaResponsive{
+        display: inline-block;
+        color: var(--ColorLetrasPrincipal);
+        font-size: 2.3rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+    .rotarLista{
+        transform: rotate(90deg);
+    }
+    .mostrarLista{
+        opacity: 1;
+        pointer-events: unset;
+    }
+    .hero{
+        height: 90vh;
+    }
+    /*Le doy estilo y dimension al boton que nos puede contactar*/
+    .hero .informacion a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*la parte derecha del hero le doy tamaño y posicion*/
+    .hero .iconos{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-basis: 20%;
+    }
+    /*cambio le doy lugar y espaciado a los iconos*/
+    .hero .contenedor{
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    /*tamaño a la linea que esta arriba de los iconos*/
+    .hero .contenedor img{
+        width: 14px;
+    }
+    /*cambio el tamaño y el color de los iconos*/
+    .hero .iconos i{
+        font-size: 1.8rem;
+    }
+    @keyframes botonDeLado{
+        0%{
+            left: -100%;
+        }
+        70%{
+            left: -100%;
+        }
+        100%{
+            left: 0;
+        }
+    }
+    .sobreMi{
+        justify-content: center;
+        padding-top: 1.7rem;
+    }
+    
+    .infoMia{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .infoMia h1{
+        font-size: 3rem;
+        padding-top: 40px;
+    }
+    .infoMia .texto p{
+        font-size: 1.6rem;
+    }
+    .infoMia .cv{
+        margin-top: 3rem;
+        font-size: 1.4rem;
+    }
+
+    .habilidades{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+    }
+    .habilidades h1{
+        padding-top: 1rem;
+    }
+    .habilidades h2{
+        padding-top: 1.2rem;
+        font-size: 1.6rem;
+    }
+    .grupoHabilidades{
+        justify-content: space-between;
+    }
+    .caja{
+        padding: 3.2rem 0rem;
+    }
+    .caja img{
+        width: 40%;
+    }
+    .contExp h1{
+        font-size: 4rem;
+    }
+    .cajaExperiencia{
+        width: 90%;
+        gap: 1rem;
+    }
+    .iconoExp img{
+        display: none;
+    }
+    .textoExp h2{
+        font-size: 3rem;
+    }
+    .textoExp h3{
+        font-size: 2.1rem;
+    }
+    .textoExp p{
+        font-size: 1.5rem;
+    }
+    .linksExp{
+        width: 80%;
+    }
+    .linksExp a{
+        font-size: 1.35rem;
+        margin-top: 1.5rem;
+    }
+    .proyectos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .contProyecto{
+        width: 95%;
+    }
+    .contProyecto h1{
+        font-size: 3rem;
+    }
+    .cajaProyecto{
+        width: 31%;
+        margin-top: 30px;
+    }
+    .contInfo{
+        text-align: center;
+    }
+    .contInfo h2{
+        font-size: 1.7rem;
+    }
+    .contInfo p{
+        font-size: 1.1rem;
+        padding: 0px 7px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+    .contInfo button{
+        font-size: 1rem;
+    }
+    .proyectos .mas{
+        font-size: 1.3rem;
+        width: 23%;
+    }
+    .mas i{
+        font-size: 1.3rem;
+    }
+    .cajaContacto p{
+        font-size: 1.3rem;
+    }
+    .linkContacto{
+        gap: 3rem;
+    }
+    .linkContacto i{
+        font-size: 1.8rem;
+    }
+    footer h2{
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width:480px) {
+    .links{
+        width: 100%;
+    }
+    .links .link a{
+        font-size: 1.36rem;
+    }
+    .hero .iconos{
+        display: none;
+    }
+    .hero{
+        height: 90vh;
+    }
+    /*le doy propiedades al apartado del hero
+    con mi nombre y informacion*/
+    .hero .informacion{
+        width: 95%;
+        margin-left: 0;
+        margin: 0 auto;
+        margin-bottom: 6rem;
+    }
+    /*Modificamos tamaño y color del H1*/
+    .hero .informacion h1{
+        font-size:4rem;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    /*Ponemos otro color para mi nombre*/
+    .hero .informacion span{
+        font-size: 4rem;
+        text-align: center;
+    }
+    /*la descripcion la le pongo color y tamaño*/
+    .hero .informacion p{
+        font-size: 1.5rem;
+        text-align: center;
+        width: 95%;
+        padding-bottom: 2rem;
+    }
+    /*Le doy estilo y dimension al boton que nos puede contactar*/
+    .hero .informacion a{
+        font-size: 1.2rem;
+        margin-top: 0rem;
+        margin-left: 0rem;
+        margin: 0 auto;
+        animation: difuminado 7s ease;
+    }
+    @keyframes difuminado {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .infoMia{
+        align-items: center;
+    }
+    .infoMia h1{
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    .infoMia .texto p{
+        font-size: 1.2rem;
+    }
+    .infoMia .cv{
+        font-size: 1rem;
+    }
+    .habilidades h1{
+        font-size: 2.6rem;
+    }
+    .grupoHabilidades{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.4rem;
+    }
+    .caja{
+        width: 55%;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        transition: all 0.7s ease;
+    }
+    .caja h2{
+        font-size: 1.7rem;
+    }
+    .contExp h1{
+        font-size: 3.1rem;
+    }
+    .iconoExp{
+        display: none;
+    }
+    .textoExp h2{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .textoExp h3{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .textoExp p{
+        font-size: 1.3rem;
+        text-align: center;
+        line-height: 2rem;
+        padding-top: 1rem;
+    }
+    .linksExp{
+        flex-direction: column;
+    }
+    .linksExp a{
+        font-size: 1.2rem;
+    }
+
+
+
+    .contProyecto h1{
+        font-size: 2.6rem;
+    }
+    .grupoProyecto{
+        margin-top: 1rem;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.4rem;
+    }
+    .cajaProyecto{
+        margin: 0 auto;
+        width: 90%;
+    }
+    .proyectos .mas{
+        width: 60%;
+        font-size: 1.1rem;
+    }
+    .contacto h1{
+        font-size: 2.6rem;
+    }
+    .deLado{
+        flex-direction: column;
+    }
+    .cajaContacto p{
+        font-size: 1.1rem;
+    }
+    .linkContacto i{
+        font-size: 1.5rem;
+    }
+    footer h2{
+        text-align: center;
+        font-size: 1.7rem;
+    }
+    .contModal{
+        width: 70%;
+    }
+    .costado{
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .contModal a{
+        color: var(--ColorLetrasPrincipal);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--ColorFondoPrincipal);
+        color: var(--ColorLetrasSecundaria);
+        font-size: 1rem;
+        margin: 0 auto;
+        padding: 7px 30px;
+        border-radius: 5px;
+        transition: all 0.6s ease;
+        width: 50%;
+        
+    }
+    .contModal a:hover{
+        background-color: var(--ColorLetrasSecundaria);
+        color: var(--ColorFondoPrincipal);
+    }
+    .contModal button{
+        padding: 5px 40px;
+        border-radius: 5px;
+        background-color: var(--ColorFondoSecundario);
+        color: var(--ColorLetrasSecundaria);
+        border: 3px solid var(--ColorLetrasSecundaria);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+}
